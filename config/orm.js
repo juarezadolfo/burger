@@ -24,7 +24,7 @@ function objToSql(ob) {
   for (var key in ob) {
     var value = ob[key];
     // check to skip hidden properties
-    if (Object.hasOwnProperty.cselectAob, key)) {
+    if (Object.hasOwnProperty.call(ob, key)) {
       // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
@@ -34,13 +34,13 @@ function objToSql(ob) {
       arr.push(key + "=" + value);
     }
   }
+
   // translate array of strings to a single comma-separated string
   return arr.toString();
 }
 
 
-
-// Object for selectAll, insertOne, updateOne SQL statement functions.
+//ORM => Object for selectAll, insertOne, updateOne SQL statement functions.
 var orm = {
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
