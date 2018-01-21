@@ -1,3 +1,10 @@
+input[type=text] {
+    background-color: #910d0d;
+	color: #f4cb42;
+
+}
+
+
 *{
 	text-align: center;
 	color: #910d0d;
@@ -9,6 +16,3 @@
 
 };
 
-.ca {
-	background-color: #910d0d;
-}
